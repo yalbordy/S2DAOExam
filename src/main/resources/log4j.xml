@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "org/apache/log4j/xml/log4j.dtd">
+<log4j:configuration xmlns:log4j= 'http://jakarta.apache.org/log4j/'>
+    <!-- ********************** 標準出力への出力 ********************** -->
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <param name="threshold" value="debug"/>
+        <!-- レイアウトの指定 -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy/MM/dd HH:mm:ss.SSS} [%x%-5p] %m @ %c %n"/>
+        </layout>
+    </appender>
+    <!-- ********************** Nullへの出力 ********************** -->
+    <appender name="NULL" class="org.apache.log4j.varia.NullAppender">
+        <param name="threshold" value="debug"/>
+    </appender>
+    <!-- ********************** category定義 ************************* -->
+    <category name="com.snail.exam.s2dao">
+        <priority value="debug"/>
+        <appender-ref ref="STDOUT"/>
+    </category>
+    <category name="org.seasar">
+        <priority value="debug"/>
+        <appender-ref ref="STDOUT"/>
+    </category>
+    <!-- ********************** root定義 ***************************** -->
+    <root>
+        <level value="fatal"/>
+        <appender-ref ref="NULL"/>
+     </root>
+</log4j:configuration>
