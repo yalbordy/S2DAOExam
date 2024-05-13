@@ -4,7 +4,7 @@ pipeline {
         UAT_BRANCH = 'UAT'
         MAIN_BRANCH = 'main'
         PRD_BRANCH_PREFIX = 'Release_3.'
-        GIT_URL = 'https://github.com/yalbordy/POC_repository.git'
+        GIT_URL = 'https://github.com/yalbordy/S2DAOExam.git'
         AWS_REGION = 'ap-northeast-1'
         S3_BUCKET = 'tcs-file-share'
         S3_FOLDER = 'devops/test'
