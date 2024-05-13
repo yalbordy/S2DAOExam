@@ -9,10 +9,10 @@
      <aspect>dao.interceptor</aspect>
   </component> -->
   
-  <component class="com.snail.exam.s2dao.OrderDao">
+  <component class="com.snail.exam.s2dao.OrderBean">
     <aspect>dao.interceptor</aspect>
   </component>
-  <component class="com.snail.exam.s2dao.ItemDao">
+  <component class="com.snail.exam.s2dao.ItemBean">
     <aspect>dao.interceptor</aspect>
   </component>
   
