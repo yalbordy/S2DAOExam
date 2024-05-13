@@ -1,8 +1,8 @@
 pipeline {
   agent any
     environment {
-        DEV_BRANCH = 'master'
-        MAIN_BRANCH = 'UAT'
+        UAT_BRANCH = 'UAT'
+        MAIN_BRANCH = 'main'
         PRD_BRANCH_PREFIX = 'Release_3.'
         GIT_URL = 'https://github.com/yalbordy/POC_repository.git'
         AWS_REGION = 'ap-northeast-1'
@@ -17,7 +17,7 @@ pipeline {
     stage('Build Development Release') {
         when {
             anyOf {
-                branch DEV_BRANCH
+                branch UAT_BRANCH
                 branch MAIN_BRANCH
             }
         }
@@ -115,7 +115,7 @@ pipeline {
     stage('Deploy') {
         when {
             anyOf {
-                branch DEV_BRANCH
+                branch UAT_BRANCH
                 branch MAIN_BRANCH
             }
         }
