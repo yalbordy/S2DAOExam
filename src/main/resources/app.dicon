@@ -4,10 +4,10 @@
 <components>
   <include path="jdbc.dicon"/>
   
-  <!-- DAOs 
+  <!-- DAOs -->
   <component class="com.snail.exam.s2dao.CustomerDao">
      <aspect>dao.interceptor</aspect>
-  </component> -->
+  </component>
   
   <component class="com.snail.exam.s2dao.OrderBean">
     <aspect>dao.interceptor</aspect>
