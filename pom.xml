@@ -35,6 +35,12 @@
       <layout>legacy</layout>
     </repository>
   </repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>central</id>
+			<url>https://repo1.maven.org/maven2</url>
+		</pluginRepository>
+  </pluginRepositories>
   <dependencies>
     <dependency>
       <groupId>org.seasar.container</groupId>
