@@ -2,7 +2,7 @@
 <!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
 "http://www.seasar.org/dtd/components.dtd">
 <components>
-  <include path="dao.dicon"/>
+  <include path="jdbc.dicon"/>
   
   <!-- DAOs -->
   <component class="com.snail.exam.s2dao.CustomerDao">
