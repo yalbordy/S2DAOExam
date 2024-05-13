@@ -1,8 +1,8 @@
 pipeline {
   agent any
     environment {
-        UAT_BRANCH = 'UAT'
         MAIN_BRANCH = 'main'
+        UAT_BRANCH = 'UAT'
         PRD_BRANCH_PREFIX = 'Release_3.'
         GIT_URL = 'https://github.com/yalbordy/S2DAOExam.git'
         AWS_REGION = 'ap-northeast-1'
@@ -74,23 +74,22 @@ pipeline {
             }}
         }
     }
-    stage('Scan') {
-      steps {
-        script {
-          sh "export PATH=$JAVA_HOME/bin:$PATH"
-          def scannerHome = tool 'sonar'
-          withSonarQubeEnv('Hello-World') {
-            sh "${scannerHome}/bin/sonar-scanner \
-            -Dsonar.projectKey=Hello-World  \
-            -Dsonar.projectName=\"Hello-World\" \
-            -Dsonar.language=java  \
-            -Dsonar.java.binaries=**/target/classes  \
-            -Dsonar.sources=core/src,web/src"
-          }
-        }
-      }
-
-    }
+    // stage('Scan') {
+    //   steps {
+    //     script {
+    //       sh "export PATH=$JAVA_HOME/bin:$PATH"
+    //       def scannerHome = tool 'sonar'
+    //       withSonarQubeEnv('Hello-World') {
+    //         sh "${scannerHome}/bin/sonar-scanner \
+    //         -Dsonar.projectKey=Hello-World  \
+    //         -Dsonar.projectName=\"Hello-World\" \
+    //         -Dsonar.language=java  \
+    //         -Dsonar.java.binaries=**/target/classes  \
+    //         -Dsonar.sources=core/src,web/src"
+    //       }
+    //     }
+    //   }
+    // }
     stage('Upload') {
       steps {
         script{
