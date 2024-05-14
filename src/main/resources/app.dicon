@@ -3,6 +3,7 @@
 "http://www.seasar.org/dtd/components.dtd">
 <components>
   <include path="dao.dicon"/>
+  <include path="convention.dicon" />
   
   <!-- DAOs -->
   <component class="com.snail.exam.s2dao.CustomerDao">
