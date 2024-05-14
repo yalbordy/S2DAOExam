@@ -2,17 +2,17 @@
 <!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
 "http://www.seasar.org/dtd/components.dtd">
 <components>
-  <include path="jdbc.dicon"/>
+  <include path="dao.dicon"/>
   
   <!-- DAOs -->
   <component class="com.snail.exam.s2dao.CustomerDao">
      <aspect>dao.interceptor</aspect>
   </component>
   
-  <component class="com.snail.exam.s2dao.OrderBean">
+  <component class="com.snail.exam.s2dao.OrderDao">
     <aspect>dao.interceptor</aspect>
   </component>
-  <component class="com.snail.exam.s2dao.ItemBean">
+  <component class="com.snail.exam.s2dao.ItemDao">
     <aspect>dao.interceptor</aspect>
   </component>
   
