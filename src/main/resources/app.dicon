@@ -6,20 +6,14 @@
   
   <!-- DAOs -->
   <component class="com.snail.exam.s2dao.CustomerDao">
-    <property name="interceptor">dao.interceptor</property>
-    <initMethod name="add">
-        <arg>"adress"</arg>
-        <arg>100</arg>
-        <arg>0</arg>
-        <arg>"name"</arg>
-    </initMethod>
-</component>
+    <aspect>dao.interceptor</aspect>
+  </component>
   <!--
   <component class="com.snail.exam.s2dao.OrderDao">
-    <property name="interceptor">dao.interceptor</property>
+    <aspect>dao.interceptor</aspect>
   </component>
   <component class="com.snail.exam.s2dao.ItemDao">
-    <property name="interceptor">dao.interceptor</property>
+    <aspect>dao.interceptor</aspect>
   </component>
-  -->
+   -->
 </components>
