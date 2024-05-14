@@ -13,7 +13,7 @@
             "oracle.jdbc.driver.OracleDriver"
         </property>
         <property name="URL">
-            "jdbc:oracle:thin:@devops.ctj4bd63qghz.ap-northeast-1.rds.amazonaws.com:1521:orcl"
+            "jdbc:oracle:thin:@devops.ctj4bd63qghz.ap-northeast-1.rds.amazonaws.com:1521:devops"
         </property>
         <property name="user">"admin"</property>
         <property name="password">"Password123"</property>
