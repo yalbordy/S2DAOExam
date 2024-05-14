@@ -17,5 +17,5 @@
         <property name="user">"admin"</property>
         <property name="password">"Password123"</property>
     </component>
-    
+    <component name="DataSource" class="org.seasar.extension.dbcp.impl.DataSourceImpl" instance="singleton" autoBinding="auto"/>
 </components>
