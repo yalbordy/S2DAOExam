@@ -6,7 +6,7 @@
   
   <!-- DAOs -->
   <component class="com.snail.exam.s2dao.CustomerDao">
-     <aspect>dao.interceptor</aspect>
+    <property name="interceptor">dao.interceptor</property>
   </component>
   
   <component class="com.snail.exam.s2dao.OrderDao">
