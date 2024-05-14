@@ -52,7 +52,7 @@ pipeline {
         steps {
             script {
                 deleteDir()
-                git branch: "${MAIN_BRANCH}",
+                git branch: "${UAT_BRANCH}",
                     credentialsId: 'github-repo-jenkins',
                     url: "${GIT_URL}"
                 withCredentials([gitUsernamePassword(credentialsId: 'github-repo-jenkins', gitToolName:'Default')]) {
@@ -63,7 +63,7 @@ pipeline {
                 def newFixBranch = incrementFixBranch(maxReleaseBranch)
                 println newFixBranch
                 // Create a new branch from main
-                sh "git checkout -b ${newFixBranch} ${MAIN_BRANCH}"
+                sh "git checkout -b ${newFixBranch} ${UAT_BRANCH}"
                 
                 // Push the new branch to remote repository
                 sh "git push --set-upstream origin ${newFixBranch}"
@@ -120,7 +120,14 @@ pipeline {
         }
       steps {
         script{
-          deploy adapters: [tomcat9(credentialsId: 'tomcat-manager', path: '', url: 'http://tomcat:8080')], contextPath: null, war: '**/*.war'
+          deleteDir()
+              git branch: "${MAIN_BRANCH}",
+                  credentialsId: 'github-repo-jenkins',
+                  url: "${GIT_URL}"
+              withCredentials([gitUsernamePassword(credentialsId: 'github-repo-jenkins', gitToolName:'Default')]) {
+                  sh 'mvn clean package -Dmaven.test.skip=true'
+                  deploy adapters: [tomcat9(credentialsId: 'tomcat-manager', path: '', url: 'http://tomcat:8080')], contextPath: null, war: '**/*.war'
+            }
         }
       }
     }
