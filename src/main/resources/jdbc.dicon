@@ -47,7 +47,7 @@
             "org.apache.derby.jdbc.EmbeddedDriver"
         </property>
         <property name="URL">
-            "jdbc:derby:C:\\javadb\\mydb;create=false"
+            "jdbc:derby:/var/jenkine_home/javadb/mydb;create=true"
         </property>
     </component>
     <component name="connectionPool"
