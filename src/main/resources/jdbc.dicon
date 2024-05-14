@@ -3,79 +3,19 @@
     "http://www.seasar.org/dtd/components24.dtd">
 <components namespace="jdbc">
    
-    <component class="org.seasar.extension.jdbc.impl.BasicResultSetFactory"/>
-    <component class="org.seasar.extension.jdbc.impl.ConfigurableStatementFactory">
-        <arg>
-            <component class="org.seasar.extension.jdbc.impl.BasicStatementFactory"/>
-        </arg>
-        <property name="fetchSize">100</property>
-        <!--
-        <property name="maxRows">100</property>
-        -->
-    </component>
+    <component class="org.seasar.extension.jdbc.impl.OracleResultSetFactory"/>
+    <component class="org.seasar.extension.jdbc.impl.BooleanToIntStatementFactory"/>
+
     <component name="xaDataSource"
             class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
         <property name="driverClassName">
             "oracle.jdbc.driver.OracleDriver"
         </property>
         <property name="URL">
-            "jdbc:oracle:thin:@devops.ctj4bd63qghz.ap-northeast-1.rds.amazonaws.com:1521:devops"
+            "jdbc:oracle:thin:@devops.ctj4bd63qghz.ap-northeast-1.rds.amazonaws.com:1521:orcl"
         </property>
         <property name="user">"admin"</property>
         <property name="password">"Password123"</property>
     </component>
-<!--
-    <component name="connectionPool"
-            class="org.seasar.extension.dbcp.impl.ConnectionPoolImpl">
-        <property name="timeout">600</property>
-        <property name="maxPoolSize">10</property>
-        <property name="allowLocalTx">true</property>
-        <property name="validationQuery">"select * from dual"</property>
-        <property name="validationInterval">10000</property>
-        <destroyMethod name="close"/>
-    </component>
--->
-    <component name="dataSource"
-       class="org.seasar.extension.dbcp.impl.DataSourceImpl"/>
-    <!-- for Derby -->
-<!--
-<component name="xaDataSource"
-        class="org.seasar.extension.dbcp.impl.XADataSourceImpl"
-        instance="singleton"
-        autoBinding="auto">
-        
-        <property name="driverClassName">
-            "org.apache.derby.jdbc.EmbeddedDriver"
-        </property>
-        <property name="URL">
-            "jdbc:derby:/var/jenkine_home/javadb/mydb;create=true"
-        </property>
-    </component>
-    <component name="connectionPool"
-        class="org.seasar.extension.dbcp.impl.ConnectionPoolImpl"
-        instance="singleton"
-        autoBinding="auto">
-        <property name="timeout">600</property>
-        <property name="maxPoolSize">0</property>
-        <property name="allowLocalTx">true</property>
-        <destroyMethod name="close"/>
-    </component>
--->
-
-    <component name="DataSource" class="org.seasar.extension.dbcp.impl.DataSourceImpl" instance="singleton" autoBinding="auto"/>
-    
-        <!-- from JNDI -->
-    <!--
-    <component name="DataSource"
-        class="javax.sql.DataSource">
-        @org.seasar.extension.j2ee.JndiResourceLocator@lookup("java:comp/env/jdbc/DataSource")
-    </component>
-    -->
-
-    <!--
-    <component name="dataSource"
-        class="org.seasar.extension.datasource.impl.SelectableDataSourceProxy"/>
-    -->
-    
     
 </components>
