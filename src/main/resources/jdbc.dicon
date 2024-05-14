@@ -6,6 +6,7 @@
     <component class="org.seasar.extension.jdbc.impl.OracleResultSetFactory"/>
     <component class="org.seasar.extension.jdbc.impl.BooleanToIntStatementFactory"/>
 
+    <component name="transactionManager" class="org.seasar.extension.jta.TransactionManagerImpl"/> 
     <component name="xaDataSource"
             class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
         <property name="driverClassName">
