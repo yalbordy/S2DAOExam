@@ -49,7 +49,6 @@
             "jdbc:derby:/var/jenkine_home/javadb/mydb;create=true"
         </property>
     </component>
--->
     <component name="connectionPool"
         class="org.seasar.extension.dbcp.impl.ConnectionPoolImpl"
         instance="singleton"
@@ -59,6 +58,7 @@
         <property name="allowLocalTx">true</property>
         <destroyMethod name="close"/>
     </component>
+-->
 
     <component name="DataSource" class="org.seasar.extension.dbcp.impl.DataSourceImpl" instance="singleton" autoBinding="auto"/>
     
