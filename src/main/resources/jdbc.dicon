@@ -13,17 +13,16 @@
         <property name="maxRows">100</property>
         -->
     </component>
-<!--
     <component name="xaDataSource"
             class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
         <property name="driverClassName">
             "oracle.jdbc.driver.OracleDriver"
         </property>
         <property name="URL">
-            "jdbc:oracle:thin:@xxx:1521:yyy"
+            "jdbc:oracle:thin:@devops.ctj4bd63qghz.ap-northeast-1.rds.amazonaws.com:1521:devops"
         </property>
-        <property name="user">"aaa"</property>
-        <property name="password">"bbb"</property>
+        <property name="user">"admin"</property>
+        <property name="password">"Password123"</property>
     </component>
     <component name="connectionPool"
             class="org.seasar.extension.dbcp.impl.ConnectionPoolImpl">
@@ -36,9 +35,9 @@
     </component>
     <component name="dataSource"
        class="org.seasar.extension.dbcp.impl.DataSourceImpl"/>
- -->
     <!-- for Derby -->
-    <component name="xaDataSource"
+<!--
+<component name="xaDataSource"
         class="org.seasar.extension.dbcp.impl.XADataSourceImpl"
         instance="singleton"
         autoBinding="auto">
@@ -50,6 +49,7 @@
             "jdbc:derby:/var/jenkine_home/javadb/mydb;create=true"
         </property>
     </component>
+-->
     <component name="connectionPool"
         class="org.seasar.extension.dbcp.impl.ConnectionPoolImpl"
         instance="singleton"
